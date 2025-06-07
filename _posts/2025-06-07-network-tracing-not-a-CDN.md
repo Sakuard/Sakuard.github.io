@@ -38,11 +38,13 @@ tags: [GCP, trouble-shooting]
 - 不是所有時間點，都是 metrics 的相對 peak
 
 回頭確認服務所屬的 node 資源
+
 ![nginx-proxy node](../assets/post/network-tracing/nginx-proxy%20node.png)
 - 資源是比較吃緊的
 
 且回頭確認服務的資源配置如下
 有設置 cpu request 卻沒有設置 limit
+
 ![nginx-proxy resources](../assets/post/network-tracing/nginx-proxy%20resources.png)
 
 👉 故推測，可能是 node 資源吃緊

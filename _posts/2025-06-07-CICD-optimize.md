@@ -15,7 +15,7 @@ CI/CD 優化，pipeline 流程加速
 經過分析發現 `image pull` & `build-script` 兩個流程是比較費時的
 ![CICD slow 1](../assets/post/cicd/cicd-slow1.png)
 ![CICD slow 2](../assets/post/cicd/cicd-slow2.png)
-而這兩個部分也有很直覺的優化方向
+<br/>而這兩個部分也有很直覺的優化方向
 
 ### Pull Image
 該 ghrc 是 github 上的 container registry, 會有自己的 ratelimit 限制，導致任務異常的費時

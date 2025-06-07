@@ -47,7 +47,7 @@ tags: [GCP, CRD, K8s]
 也不需太多異動
 
 CRD
-```yaml=
+```yaml
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
@@ -99,7 +99,7 @@ spec:
 ```
 
 CR
-```yaml=
+```yaml
 apiVersion: pd.sre/v1beta1
 kind: SREImageVerifier
 metadata:
