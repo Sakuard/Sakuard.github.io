@@ -2,7 +2,7 @@
 title: 用 CRD 解決 GKE 上資源不同步
 date: 2025-5-20 08:00:00 +0800
 categories: [Blog, TechLog]
-tags: [CRD, K8s]
+tags: [GCP, CRD, K8s]
 ---
 
 
@@ -37,11 +37,11 @@ tags: [CRD, K8s]
 - `Project CICD` 用 `kubectl patch` 的方式，對服務 `CR` 做資源調整
 - `Helm CI/CD` 內利用 `shell script` 針對 `CR` 做資源比對
 ---
-:point_right:  純腳本
+👉  純腳本
 要在一個腳本同時符合上述條件的便是，其邏輯會過於複雜，對後續維護可能會有一定負擔
-:point_right: 用 `--reuse-value`
+👉 用 `--reuse-value`
 目前現行的服務 `helm Chart` 多數還是在 local 且有複數個版本，若要使用 `--reuse-value` 則需要統一版本後打包成 oci 讓 `project CICD` 使用，版本統一的 effert 會有一定負擔
-:point_right: 用 `CRD` 配合 `shell script`
+👉 用 `CRD` 配合 `shell script`
 需要多了解 CRD 以及 CR 的使用
 但 `Shell script` 的邏輯相對單純
 也不需太多異動
