@@ -9,7 +9,7 @@ tags: [cloudflare, security]
 藉由 `cloudflare-tunnel` 在 `Kubernetes` 內為 `Grafana` 搭建臨時的安全通道
 
 ## 背景
-自己維護的 GKE 上有部署 `kube-prometheus-stack` 對服務做 `metrics` 的監控，但同時又不希望 `Grafana` 長時暴露在外，故規劃了一套油 事件驅動 來動態建立 `cloudflare-tunnel` 的 `tunnel-worker-controller`
+自己維護的 GKE 上有部署 `kube-prometheus-stack` 對服務做 `metrics` 的監控，但同時又不希望 `Grafana` 長時暴露在外，故規劃了一套由 事件驅動 來動態建立 `cloudflare-tunnel` 的 `tunnel-worker-controller`
 
 
 ## Tech Stack

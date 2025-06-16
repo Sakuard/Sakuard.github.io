@@ -11,14 +11,14 @@ tags: [GCP, trouble-shooting]
 
 
 ## 背景
-公司內部 RD 他們後端為了降低 loading，在前端有掛了 CDN
+公司內部 RD 他們後端為了降低負載，在前端有掛了 CDN
 但近一週，卻還是有 client 直接到 server 端取資料的 log
 而他們會有 log 有兩個情況
 1. CDN 掛掉
 2. client 端 timeout(2s), 改直接到 server 端取資料
 
 ### 問題追查
-先透過 `nslook up` 確認服務打得 domain 指向 ip 為 34.x.x.x，是我們 GCP ip 範圍
+先透過 `nslookup` 確認服務打得 domain 指向 ip 為 34.x.x.x，是我們 GCP ip 範圍
 後續確認 ip 所屬服務為 `Global LoadBalancer`，並在其 `backend` 注意到是用 [NEG](https://cloud.google.com/load-balancing/docs/negs) 的網路架構
 
 ![NEG](../assets/post/network-tracing/NEG.png)
@@ -35,7 +35,7 @@ tags: [GCP, trouble-shooting]
 從 metrics 觀察 `cpu`
 ![nginx-proxy metrics](../assets/post/network-tracing/nginx-proxy%20metrics.png)
 - 服務並無中斷
-- 不是所有時間點，都是 metrics 的相對 peak
+- 不是所有時間點，都是 metrics 的 spike
 
 回頭確認服務所屬的 node 資源
 

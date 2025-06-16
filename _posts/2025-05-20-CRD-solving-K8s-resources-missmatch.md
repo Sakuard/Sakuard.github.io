@@ -27,20 +27,20 @@ tags: [GCP, CRD, K8s]
 
 #### 用 `--reuse-value`
 - 對現有服務需要統一 `helm chart` 版本，並打包成 oci
-- 在 `project CICD` 利用 `--reuse-value` 同時替換 `GAR` 參數，讓 `helm release` 的資源達到同步更新
+- 在 `project CI/CD` 利用 `--reuse-value` 同時替換 `GAR` 參數，讓 `helm release` 的資源達到同步更新
 
 #### 用 `CRD` 配合 `shell script`
 寫一個 `CRD` 紀錄服務 `release` 相關 `image` 資訊，並透過 `shell script` 針對指定資源做匹配比對
 
 - 在全環境部署 `CRDs`
 - 在需要版控的服務額外加上 `CR`
-- `Project CICD` 用 `kubectl patch` 的方式，對服務 `CR` 做資源調整
+- `Project CI/CD` 用 `kubectl patch` 的方式，對服務 `CR` 做資源調整
 - `Helm CI/CD` 內利用 `shell script` 針對 `CR` 做資源比對
 ---
 👉  純腳本
 要在一個腳本同時符合上述條件的便是，其邏輯會過於複雜，對後續維護可能會有一定負擔
 👉 用 `--reuse-value`
-目前現行的服務 `helm Chart` 多數還是在 local 且有複數個版本，若要使用 `--reuse-value` 則需要統一版本後打包成 oci 讓 `project CICD` 使用，版本統一的 effert 會有一定負擔
+目前現行的服務 `helm Chart` 多數還是在 local 且有複數個版本，若要使用 `--reuse-value` 則需要統一版本後打包成 oci 讓 `project CI/CD` 使用，版本統一的 effort 會有一定負擔
 👉 用 `CRD` 配合 `shell script`
 需要多了解 CRD 以及 CR 的使用
 但 `Shell script` 的邏輯相對單純

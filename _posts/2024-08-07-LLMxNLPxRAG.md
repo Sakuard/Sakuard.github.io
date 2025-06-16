@@ -19,7 +19,7 @@ tags: [AI, RAG, NLP]
 
 :star: 最後帶入一些實際關於 RAG 的範例
 
-![AI x ML x NLP](../assets/post/ai/AI%20x%20ML%20x%20NLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
+![AI x ML x NLP](../assets/post/ai/AI%20x%20ML%20x%20NLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Business Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
 
 ## :question: What is LLM
 :heavy_check_mark: 一個文字接龍的生成式模型
@@ -27,27 +27,27 @@ tags: [AI, RAG, NLP]
     :point_right: 回應句子的每一個字都是機率算出來的
     :point_right: 且每個位置的每個字，其機率都不同
 
-    |第一個字生成|選擇|
-    |--------|--------|
-    | 我： 10% |
-    | 台： 80% |:heavy_check_mark:
-    | 灣： 15% |
-    | ... |
-    | 是： 55% |
-    | 玉： 45% |
-    | 山： 25% |
+    | 第一個字生成 | 選擇               |
+    | ------------ | ------------------ |
+    | 我： 10%     |
+    | 台： 80%     | :heavy_check_mark: |
+    | 灣： 15%     |
+    | ...          |
+    | 是： 55%     |
+    | 玉： 45%     |
+    | 山： 25%     |
 
     :point_right: LLM生成：台
 
-    |第二個字生成|選擇|
-    |--------|--------
-    | 我： 10%  |   |
-    | 台： 25%  |   |
-    | 灣： 70%  | :heavy_check_mark:  |
-    | ...  |   |
-    | 是： 30%  |   |
-    | 玉： 45%  |   |
-    | 山： 35%  |   |
+    | 第二個字生成 | 選擇               |
+    | ------------ | ------------------ |
+    | 我： 10%     |                    |
+    | 台： 25%     |                    |
+    | 灣： 70%     | :heavy_check_mark: |
+    | ...          |                    |
+    | 是： 30%     |                    |
+    | 玉： 45%     |                    |
+    | 山： 35%     |                    |
 
     :point_right: LLM生成：台灣
 
@@ -58,7 +58,7 @@ tags: [AI, RAG, NLP]
 :heavy_check_mark: 沒有認知邊界
 
 ## :question: What is NLP
-:heavy_check_mark: NLP(Natrual Language Processing) 即是自然語言處理
+:heavy_check_mark: NLP(Natural Language Processing) 即是自然語言處理
 - ML 的訓練結果如潘朵拉的盒子
     :point_right: ML 訓練出來的模型，每次結果的好壞是較難以預測，且費時
     :point_right: NLP 的訓練過程與結果相對容易控制
@@ -87,7 +87,7 @@ tags: [AI, RAG, NLP]
 
 :exclamation: 由於機器並不認得我們的自然語言，在機器的世界裡，都是 0,1 的數字，所以我們透過 Embedding 的技術，機器才得以認得我們的語言
 
-### :star2: 資料檢索語生成
+### :star2: 資料檢索與生成
 有了這些資訊，我們即可透過 自然語言的方式做提問(Query)，把 Query 也用 Embedding 的方式，讓機器去資料庫找到最相似的資訊(Data)
 
 最後把 Query + Data 用自然語言的方式整合成一個 Prompt 提供給 LLM
@@ -126,7 +126,7 @@ except Exception as e:
 existing_docs = collection.get()
 existing_ids = set(existing_docs['ids'])
 
-# Document vectorize and store into vector database中
+# Document vectorize and store into vector database
 for i, d in enumerate(documents):
     if str(i) in existing_ids:
         print(f"ID {i} already exists, skipping.")
@@ -146,7 +146,7 @@ for i, d in enumerate(documents):
 ```python
 Query = "What animals are llamas related to?"
 
-# vectorinze and embeddings
+# vectorize and embeddings
 response = ollama.embeddings(
   prompt=Query,
   model="mxbai-embed-large"
@@ -187,13 +187,13 @@ So, to summarize, llamas are related to vicuñas, camels, and alpacas. These ani
 
 #### Figure-out
 - infra of Re-Ranking(how does it works)
-- collection schema deaign(base on what?)
+- collection schema design(base on what?)
 - Active RAG
 
 #### Optimize brainstorming (待驗證)
-- 透過 Query 持續強化學習, two db controll ( source-data / query optimize )
+- 透過 Query 持續強化學習, two db control ( source-data / query optimize )
 - mixture of GraphDB?
-- optimize "prompt" with different type of Query question to exec difference process
+- optimize "prompt" with different type of Query question to execute different processes
 - embedding full-context / key-context 
 
 #### interface

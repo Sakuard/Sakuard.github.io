@@ -18,7 +18,7 @@ CI/CD 優化，pipeline 流程加速
 <br/>而這兩個部分也有很直覺的優化方向
 
 ### Pull Image
-該 ghrc 是 github 上的 container registry, 會有自己的 ratelimit 限制，導致任務異常的費時
+該 ghcr 是 github 上的 container registry, 會有自己的 rate limit 限制，導致任務異常的費時
 
 👉 手動把 `image` 拉下來後，推到與 runner 同個 GCP Project 的 GAR
 
@@ -29,11 +29,11 @@ CI/CD 優化，pipeline 流程加速
 實際的 image 大小也從原本的 23GB 剩不到 10GB
 ![img-gar](../assets/post/cicd/img-gar.png)
 
-👉 調整後，拉 Image 時間只需要花 3 分鐘
+👉 調整後，拉 image 時間只需要花 3 分鐘
 ![cicd img-pull optimize](../assets/post/cicd/cicd%20img-pull%20optimize.png)
 
 比較可惜的是
-由於 Story 預估的時間關係
+由於這個任務有預估花費的關係
 無法測試針對 `build-script` 加上 `cache` 的打包加速
 
 ---
