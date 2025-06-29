@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# 排除一些不需要索引的資料夾
+Disallow: /assets/lib/
+Disallow: /.git/
+Disallow: /tools/
+
+# 網站地圖位置
+Sitemap: https://sakuard.github.io/sitemap.xml

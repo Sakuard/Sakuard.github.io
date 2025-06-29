@@ -19,7 +19,7 @@ title: Cosparks.blog # the main title
 tagline: A Docs site for Cosparks # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Matt 的技術部落格，分享 DevOps、K8s、AI/ML、網路架構等技術經驗與解決方案。
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -58,7 +58,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-J7YWD9NQGZ # fill in your Google Analytics ID
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
