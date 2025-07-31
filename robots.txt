@@ -7,4 +7,4 @@ Disallow: /.git/
 Disallow: /tools/
 
 # 網站地圖位置
-Sitemap: https://sakuard.github.io/sitemap.xml
+Sitemap: https://blog.cosparks.app/sitemap.xml

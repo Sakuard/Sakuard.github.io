@@ -19,17 +19,17 @@ title: Cosparks.blog # the main title
 tagline: A Docs site for Cosparks # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Matt 的技術部落格，分享 DevOps、K8s、AI/ML、網路架構等技術經驗與解決方案。
+  CoSparks 是一個結合技術分享與人生反思的部落格，強調跨域合作、創意激盪與真實經驗。收錄工具研究、排查紀錄及 Ah-ha moments，邀請你一起參與合作的火花！
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://Sakuard.github.io"
+url: "https://blog.cosparks.app"
 
 github:
   username: Sakuard # change to your GitHub username
 
-twitter:
-  username: MattHuang000 # change to your Twitter username
+# twitter:
+#   username: MattHuang000 # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -45,7 +45,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: 4yXQoexDZDdb70jGClBcTSfOHyJ333IWYCP5rr4I5Hg
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -101,7 +101,7 @@ avatar: /assets/img/avatar.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: /assets/img/favicons/android-chrome-512x512.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true
