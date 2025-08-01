@@ -49,6 +49,7 @@ jobs:
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
+          PRODUCTION_URL: "https://blog.cosparks.app"
 
       - name: Test site
         run: |

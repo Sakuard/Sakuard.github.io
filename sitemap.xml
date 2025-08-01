@@ -1,0 +1,51 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign production_url = site.env.PRODUCTION_URL | default: "https://blog.cosparks.app" %}
+{%- for post in site.posts %}
+  <url>
+    <loc>{{ production_url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for page in site.pages %}
+  {%- unless page.url contains '/assets/' or page.url contains '/404.html' %}
+  <url>
+    <loc>{{ production_url }}{{ page.url | remove: 'index.html' }}</loc>
+    {%- if page.date %}
+    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+  {%- endunless %}
+{%- endfor %}
+{%- for collection in site.collections %}
+  {%- unless collection.label == "posts" %}
+    {%- for document in collection.docs %}
+  <url>
+    <loc>{{ production_url }}{{ document.url }}</loc>
+    {%- if document.date %}
+    <lastmod>{{ document.date | date_to_xmlschema }}</lastmod>
+    {%- endif %}
+  </url>
+    {%- endfor %}
+  {%- endunless %}
+{%- endfor %}
+{%- if site.categories.size > 0 %}
+  {%- for category in site.categories %}
+  <url>
+    <loc>{{ production_url }}/categories/{{ category[0] | downcase | replace: ' ', '-' }}/</loc>
+  </url>
+  {%- endfor %}
+{%- endif %}
+{%- if site.tags.size > 0 %}
+  {%- for tag in site.tags %}
+  <url>
+    <loc>{{ production_url }}/tags/{{ tag[0] | downcase | replace: ' ', '-' }}/</loc>
+  </url>
+  {%- endfor %}
+{%- endif %}
+</urlset>
