@@ -10,67 +10,67 @@ tags: [AI, RAG, NLP]
 檢索增強生成
 文章難易度：★★☆☆☆
 
-:star: 本篇著重在
+🌟 本篇著重在
 - **什麼是 RAG 及其應用**
 
-:star: 過程中會簡介
+🌟 過程中會簡介
 - 什麼是 LLM，背後運作機制概念
 - 什麼是 NLP
 
-:star: 最後帶入一些實際關於 RAG 的範例
+🌟 最後帶入一些實際關於 RAG 的範例
 
 ![AI x ML x NLP](../assets/post/ai/AI%20x%20ML%20x%20NLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Business Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
 
-## :question: What is LLM
-:heavy_check_mark: 一個文字接龍的生成式模型
+## ❓ What is LLM
+✅ 一個文字接龍的生成式模型
 - LLM的回應生成，可以粗略的視為
-    :point_right: 回應句子的每一個字都是機率算出來的
-    :point_right: 且每個位置的每個字，其機率都不同
+    👉 回應句子的每一個字都是機率算出來的
+    👉 且每個位置的每個字，其機率都不同
 
     | 第一個字生成 | 選擇               |
     | ------------ | ------------------ |
     | 我： 10%     |
-    | 台： 80%     | :heavy_check_mark: |
+    | 台： 80%     | ✅ |
     | 灣： 15%     |
     | ...          |
     | 是： 55%     |
     | 玉： 45%     |
     | 山： 25%     |
 
-    :point_right: LLM生成：台
+    👉 LLM生成：台
 
     | 第二個字生成 | 選擇               |
     | ------------ | ------------------ |
     | 我： 10%     |                    |
     | 台： 25%     |                    |
-    | 灣： 70%     | :heavy_check_mark: |
+    | 灣： 70%     | ✅ |
     | ...          |                    |
     | 是： 30%     |                    |
     | 玉： 45%     |                    |
     | 山： 35%     |                    |
 
-    :point_right: LLM生成：台灣
+    👉 LLM生成：台灣
 
-:heavy_check_mark: 有時會產生幻覺
+✅ 有時會產生幻覺
 - 機率的文字接龍
-    :point_right: 由於回應的內容都是機率算出來的，所以他對於「自己知道什麼 與 不知道什麼」是沒有辦法瞭解的
+    👉 由於回應的內容都是機率算出來的，所以他對於「自己知道什麼 與 不知道什麼」是沒有辦法瞭解的
 
-:heavy_check_mark: 沒有認知邊界
+✅ 沒有認知邊界
 
-## :question: What is NLP
-:heavy_check_mark: NLP(Natural Language Processing) 即是自然語言處理
+## ❓ What is NLP
+✅ NLP(Natural Language Processing) 即是自然語言處理
 - ML 的訓練結果如潘朵拉的盒子
-    :point_right: ML 訓練出來的模型，每次結果的好壞是較難以預測，且費時
-    :point_right: NLP 的訓練過程與結果相對容易控制
+    👉 ML 訓練出來的模型，每次結果的好壞是較難以預測，且費時
+    👉 NLP 的訓練過程與結果相對容易控制
 
-## :question: What is RAG
-:heavy_check_mark: RAG 是基於 NLP 發展出來的一種技術
+## ❓ What is RAG
+✅ RAG 是基於 NLP 發展出來的一種技術
 
-:heavy_check_mark: 為 LLM 加上外掛
+✅ 為 LLM 加上外掛
 - 使用既有的 LLM 外掛我們的資料
-    :point_right: 前面提到 LLM 並沒有「認知邊界」，在 RAG 透過把 特定範圍的知識 ***外掛*** 給 LLM，使其可以針對該知識集資料回答問題
+    👉 前面提到 LLM 並沒有「認知邊界」，在 RAG 透過把 特定範圍的知識 ***外掛*** 給 LLM，使其可以針對該知識集資料回答問題
 
-:heavy_check_mark: 訓練成本低
+✅ 訓練成本低
 
 ![Basic RAG Structure](../assets/post/ai/Basic%20RAG%20Structure.png)
 
@@ -79,22 +79,22 @@ tags: [AI, RAG, NLP]
 1. 資料外掛
 2. 資料檢索與生成
 
-### :star2: 資料外掛
+### 🌟 資料外掛
 將 LLM 的認知範圍，限縮鎖定在我們希望的特定範圍內
 我們會將這些特定範圍的資料，以 Embedding 的方式儲存在資料庫
 
 *Embedding 是一種將物件(如：單詞、句子、圖片、檔案)向量化的方式(結果通常是一個數學矩陣)*
 
-:exclamation: 由於機器並不認得我們的自然語言，在機器的世界裡，都是 0,1 的數字，所以我們透過 Embedding 的技術，機器才得以認得我們的語言
+❗ 由於機器並不認得我們的自然語言，在機器的世界裡，都是 0,1 的數字，所以我們透過 Embedding 的技術，機器才得以認得我們的語言
 
-### :star2: 資料檢索與生成
+### 🌟 資料檢索與生成
 有了這些資訊，我們即可透過 自然語言的方式做提問(Query)，把 Query 也用 Embedding 的方式，讓機器去資料庫找到最相似的資訊(Data)
 
 最後把 Query + Data 用自然語言的方式整合成一個 Prompt 提供給 LLM
 讓 LLM 針對這個 Prompt 來產生回應
 
-## :star2: Demo
-:point_right: 資料(documents) Embedding，並儲存到資料庫(chromadb)
+## 🌟 Demo
+👉 資料(documents) Embedding，並儲存到資料庫(chromadb)
 - LLM 模型使用 llama2
 - 資料庫使用 ChromaDB
 
@@ -141,7 +141,7 @@ for i, d in enumerate(documents):
     )
 ```
 
-:point_right: 將 Query Embedding 後，到資料庫找到最相似的資料(data)
+👉 將 Query Embedding 後，到資料庫找到最相似的資料(data)
 
 ```python
 Query = "What animals are llamas related to?"
@@ -158,7 +158,7 @@ results = collection.query(
 data = results['documents'][0][0]
 ```
 
-:point_right: 將 Query + data 整合成一個 Prompt 讓 LLM 針對這個 Prompt 產生回應 :point_right:output['response']
+👉 將 Query + data 整合成一個 Prompt 讓 LLM 針對這個 Prompt 產生回應 👉output['response']
 
 ```python
 ollama.pull(model="llama2")
@@ -170,7 +170,7 @@ output = ollama.generate(
 
 print(output['response'])
 ```
-:point_right: 回應範例
+👉 回應範例
 ```
 Llamas are members of the camelid family, which means they are closely related to other animals such as:
 
