@@ -1,5 +1,5 @@
 ---
-title: Use ingress-nginx on GKE for request handling
+title: 在 GKE 上用 ingress-nginx 處理流量
 date: 2025-07-29 22:35:00 +0800
 categories: [Blog, TechLog]
 tags: [K8s, GKE, ingress-nginx]
