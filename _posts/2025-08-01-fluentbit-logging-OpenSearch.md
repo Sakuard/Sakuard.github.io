@@ -2,7 +2,7 @@
 title: Side-Car 的方式用 fluent-bit 收 log 送到 OpenSearch
 date: 2025-08-01 15:00:00 +0800
 categories: [Blog, TechLog]
-tags: [GCP, GKE, K8s, logging, monitoring, OpenSearch]
+tags: [GCP, GKE, K8s, fluent-bit, log, logging, monitoring, OpenSearch]
 ---
 
 ## TL;DR

@@ -1,5 +1,5 @@
 ---
-title: A Brief introduction to LLM QA Bot
+title: 5 分鐘帶你了解 LLM QA Bot
 date: 2025-08-04 9:00:00 +0800
 categories: [Blog, TechLog]
 tags: [LLM, RAG, qa-bot]

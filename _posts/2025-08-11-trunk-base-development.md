@@ -1,5 +1,5 @@
 ---
-title: Git 分支管理策略 - Trunk-Based Development
+title: Git 分支管理策略 主幹開發 Trunk-Based Development
 date: 2025-08-11 11:00:00 +0800
 categories: [Blog, TechLog]
 tags: [Git]

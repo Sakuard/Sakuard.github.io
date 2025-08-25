@@ -1,5 +1,5 @@
 ---
-title: 人生的反思，自我生存之道
+title: 人生反思
 date: 2024-06-19 08:00:00 +0800
 categories: [Blog, Journal]
 tags: [SelfImprovement]

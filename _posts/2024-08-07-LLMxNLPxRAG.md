@@ -1,5 +1,5 @@
 ---
-title: LLM x NLP x RAG
+title: 7 分鐘帶你了解 LLM NLP RAG
 date: 2024-08-07 08:00:00 +0800
 categories: [Blog, TechLog]
 tags: [AI, RAG, NLP]
